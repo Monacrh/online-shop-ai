@@ -3,8 +3,10 @@ import 'package:online_shop_ai/common/widgets/custom_shapes/containers/primary_h
 import 'package:online_shop_ai/features/shop/screens/home/widgets/home_appbar.dart';
 import '../../../../common/widgets/custom_shapes/containers/searh_container.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
+import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 import 'widgets/home_categories.dart';
+import 'widgets/promo_slider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -43,12 +45,20 @@ class HomeScreen extends StatelessWidget {
                 ],               
               ),
             ),
+            /// Carousel Slider
+            Padding(
+              padding: EdgeInsets.all(TSizes.defaultSpace),
+              child: PromoSlider(banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3],),
+            )
           ],
         ),
       ),
     );
   }
 }
+
+
+
 
 
 
