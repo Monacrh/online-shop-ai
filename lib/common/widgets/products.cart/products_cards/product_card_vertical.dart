@@ -11,6 +11,7 @@ import 'package:online_shop_ai/utils/helpers/helper_functions.dart';
 
 import '../../../../utils/constants/sizes.dart';
 import '../../icons/circular_icon.dart';
+import '../../texts/brand_title_verified.dart';
 
 class ProductCardVertical extends StatelessWidget{
   const ProductCardVertical({super.key});
@@ -64,25 +65,28 @@ class ProductCardVertical extends StatelessWidget{
             const SizedBox(height: TSizes.spaceBtwItems/2),
             
             /// Details
-            Padding(
-              padding: const EdgeInsets.only(left: TSizes.sm),
+            const Padding(
+              padding: EdgeInsets.only(left: TSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const ProductTitleText(title: 'Green Nike Air Shoes', smallSize: true,),
-                  const SizedBox(height: TSizes.spaceBtwItems/2),
-                  Row(
-                    children: [
-                      Text('Nike', overflow:TextOverflow.ellipsis, maxLines: 1, style: Theme.of(context).textTheme.labelMedium),
-                      const SizedBox(width: TSizes.xs),
-                      const Icon(Iconsax.verify5, color: TColors.primary, size: TSizes.iconXs),
-                    ],
-                  ),
+                  ProductTitleText(title: 'Green Nike Air Shoes', smallSize: true,),
+                  SizedBox(height: TSizes.spaceBtwItems/2),
+                  BrandTitleVerified(title: 'Nike'),
+                ],
+              ),
+            ),
+
+                  const Spacer(),
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       /// Price
-                      const ProductPriceText(price: '35.0'),
+                      const Padding(
+                        padding: EdgeInsets.only(left:TSizes.md),
+                        child: ProductPriceText(price: '35.0'),
+                      ),
 
                       /// Add To Cart Button
                       Container(
@@ -101,9 +105,6 @@ class ProductCardVertical extends StatelessWidget{
                       )
                     ],
                   )
-                ],
-              ),
-            )
           ],
         ),
       ),
