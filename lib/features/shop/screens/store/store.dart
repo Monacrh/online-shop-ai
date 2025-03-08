@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:online_shop_ai/common/widgets/appbar/appbar.dart';
 import 'package:online_shop_ai/common/widgets/appbar/tabbar.dart';
-import 'package:online_shop_ai/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:online_shop_ai/common/widgets/custom_shapes/containers/searh_container.dart';
 import 'package:online_shop_ai/common/widgets/layouts/grid_layout.dart';
 import 'package:online_shop_ai/common/widgets/products.cart/cart_menu_icon.dart';
 import 'package:online_shop_ai/common/widgets/texts/section_heading.dart';
+import 'package:online_shop_ai/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:online_shop_ai/utils/constants/colors.dart';
 import 'package:online_shop_ai/utils/helpers/helper_functions.dart';
 
-import '../../../../common/widgets/products.cart/products_cards/brand_cart.dart';
-import '../../../../utils/constants/image_strings.dart';
+import '../../../../common/widgets/brands/brand_cart.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class StoreScreen extends StatelessWidget {
@@ -71,39 +70,10 @@ class StoreScreen extends StatelessWidget {
                 ]) 
             ),
           ];
-        }, body: TabBarView(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: Column(
-                children: [
-                  RoundedContainer(
-                    showBorder: true,
-                    borderColor: TColors.darkGrey,
-                    backgroundColor: Colors.transparent,
-                    margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
-                    child: Column(
-                      children: [
-                        const BrandCard(showBorder: false),
-
-                        Row(
-                          children: [
-                            RoundedContainer(
-                              height: 100,
-                              backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkGrey : TColors.light,
-                              margin: const EdgeInsets.only(right: TSizes.sm),
-                              padding: const EdgeInsets.all(TSizes.md),
-                              child: const Image(fit: BoxFit.contain, image: AssetImage(TImages.productImage1)),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            )
-          ],
+        }, 
+        
+        body: const TabBarView(
+          children: [CategoryTab(), CategoryTab(),CategoryTab(),CategoryTab(),CategoryTab(),],
         )
         ),
       ),
