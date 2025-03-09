@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is an online shop with Virtual Try On AI.
+This project is an online shop with VTON AI.
 
 A few resources to get you started if this is your first Flutter project:
 
