@@ -6,6 +6,8 @@ import 'package:online_shop_ai/features/shop/screens/store/store.dart';
 import 'package:online_shop_ai/utils/constants/colors.dart';
 import 'package:online_shop_ai/utils/helpers/helper_functions.dart';
 
+import 'features/shop/screens/wishlist/wishlist.dart';
+
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
 
@@ -42,7 +44,7 @@ class NavigationController extends GetxController{
   final screens = [
     const HomeScreen(),
     const StoreScreen(), 
-    Container(color: Colors.purple),
+    const FavouriteScreen(),
     Container(color: Colors.orange),
     Container(color: Colors.blue),
   ];
