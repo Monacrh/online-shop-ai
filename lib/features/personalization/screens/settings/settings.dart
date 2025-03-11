@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:online_shop_ai/common/widgets/appbar/appbar.dart';
 import 'package:online_shop_ai/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:online_shop_ai/common/widgets/texts/section_heading.dart';
+import 'package:online_shop_ai/features/personalization/screens/profile/profile.dart';
 import 'package:online_shop_ai/utils/constants/colors.dart';
 
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
@@ -26,7 +28,7 @@ class SettingsScreen extends StatelessWidget {
                 TAppBar(title: Text('Account', style: Theme.of(context).textTheme.headlineMedium!.apply(color: TColors.white))),
 
                 /// User Profile Card
-                const UserProfileTile(),
+                UserProfileTile(onPressed: () => Get.to(() => const ProfileScreen())),
                 const SizedBox(height: TSizes.spaceBtwSections),
                 ]
             ),
