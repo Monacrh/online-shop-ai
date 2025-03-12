@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:online_shop_ai/common/widgets/appbar/appbar.dart';
-import 'package:online_shop_ai/utils/device/device_utility.dart';
+import 'package:online_shop_ai/features/shop/screens/product_reviews/widgets/user_review_card.dart';
 
-import '../../../../utils/constants/colors.dart';
+import '../../../../common/widgets/products.cart/ratings/rating_indicator.dart';
 import '../../../../utils/constants/sizes.dart';
+import 'widgets/rating_progress_indicator.dart';
 
 class ProductReviewsScreen extends StatelessWidget {
   const ProductReviewsScreen({super.key});
@@ -25,34 +26,16 @@ class ProductReviewsScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwItems),
 
               /// Overall Product Ratings
-              Row(
-                children: [
-                  Text('4.8', style: Theme.of(context).textTheme.displayLarge),
-                  Expanded(
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Text('5', style: Theme.of(context).textTheme.bodyMedium),
-                            Expanded(
-                              child: SizedBox(
-                                width: TDeviceUtils.getScreenWidth(context)* 0.8,
-                                child: LinearProgressIndicator(
-                                  value: 0.5,
-                                  minHeight: 25,
-                                  backgroundColor: TColors.grey,
-                                  borderRadius: BorderRadius.circular(7),
-                                  valueColor: const AlwaysStoppedAnimation(TColors.primary),
-                                ),
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              )
+              const OverallProductRating(),
+              const TRatingBarIndicator(rating: 4.5),
+              Text("12,611", style: Theme.of(context).textTheme.bodySmall),
+              const SizedBox(height: TSizes.spaceBtwSections),
+
+              
+              /// User Review
+              const UserReviewCard(),
+              const UserReviewCard(),
+              const UserReviewCard(),
             ],
           ),
         ),
