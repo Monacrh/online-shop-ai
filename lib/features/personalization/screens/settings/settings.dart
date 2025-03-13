@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:online_shop_ai/common/widgets/appbar/appbar.dart';
 import 'package:online_shop_ai/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:online_shop_ai/common/widgets/texts/section_heading.dart';
+import 'package:online_shop_ai/features/personalization/screens/address/address.dart';
 import 'package:online_shop_ai/features/personalization/screens/profile/profile.dart';
 import 'package:online_shop_ai/utils/constants/colors.dart';
 
@@ -42,7 +43,7 @@ class SettingsScreen extends StatelessWidget {
                 const TSectionHeading(title: 'Account Settings', showActionButton: false,),
                 const SizedBox(height: TSizes.spaceBtwItems),
 
-                const SettingsMenuTile(icon:Iconsax.safe_home, title: 'My Addresses', subtitle: 'Set shopping delivery address'),
+                SettingsMenuTile(icon:Iconsax.safe_home, title: 'My Addresses', subtitle: 'Set shopping delivery address', onTap: () => Get.to(() => const UserAddressScreen()),),
                 const SettingsMenuTile(icon:Iconsax.shopping_cart, title: 'My Cart', subtitle: 'Add, remove products and move to checkout'),
                 const SettingsMenuTile(icon:Iconsax.bag_tick, title: 'My Orders', subtitle: 'In progress and Completed Orders'),
                 const SettingsMenuTile(icon:Iconsax.bank, title: 'Bank Account', subtitle: 'withdraw balance to registered bank account'),
