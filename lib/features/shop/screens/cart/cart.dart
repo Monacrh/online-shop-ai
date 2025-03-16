@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:online_shop_ai/common/widgets/appbar/appbar.dart';
-import 'package:online_shop_ai/common/widgets/texts/product_price_text.dart';
+import 'package:online_shop_ai/common/widgets/products.cart/cart/cart_item.dart';
+import 'package:online_shop_ai/features/shop/screens/checkout/checkout.dart';
 
-import '../../../../common/widgets/products.cart/cart/add_remove_button.dart';
-import '../../../../common/widgets/products.cart/cart/cart_item.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class CartScreen extends StatelessWidget {
@@ -13,37 +13,15 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: TAppBar(showBackArrow: true, title: Text('Cart', style: Theme.of(context).textTheme.headlineSmall)),
-      body: Padding(
-        padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: ListView.separated(
-          shrinkWrap: true,
-          separatorBuilder: (_, __) => const SizedBox(height: TSizes.spaceBtwSections),
-          itemCount: 10,
-          itemBuilder: (_, index) => const Column(
-            children: [
-              CartItem(),
-              SizedBox(height: TSizes.spaceBtwItems),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      /// Extra Space
-                      SizedBox(width: 70),
-                      /// Add & Remove Button
-                      ProductQuantityWithAddRemoveButton(),
-                    ],
-                  ),
-                  ProductPriceText(price: '256')
-                ],
-              )
-            ],
-          ),
-        ),
+      body: const Padding(
+        padding: EdgeInsets.all(TSizes.defaultSpace),
+
+        child: CartItem(),
       ),
+      /// Checkout Button
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: ElevatedButton(onPressed: (){}, child: const Text('Checkout \$256.0')),
+        child: ElevatedButton(onPressed: () => Get.to(() => const CheckoutScreen()), child: const Text('Checkout \$256.0')),
       ),
     );
   }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:online_shop_ai/common/styles/spacing_styles.dart';
-import 'package:online_shop_ai/features/authentication/screens/login/login.dart';
+// import 'package:online_shop_ai/features/authentication/screens/login/login.dart';
+import 'package:online_shop_ai/navigation_menu.dart';
 import 'package:online_shop_ai/utils/constants/sizes.dart';
 import 'package:online_shop_ai/utils/constants/text_strings.dart';
 import 'package:online_shop_ai/utils/helpers/helper_functions.dart';
@@ -33,7 +34,7 @@ class SuccessScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwItems),
            
               /// Buttons
-              SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.to(() => const LoginScreen()), child: const Text(TTexts.tContinue))),
+              SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.to(() => const NavigationMenu()), child: const Text(TTexts.tContinue))),
             ],
           ),
           ),
