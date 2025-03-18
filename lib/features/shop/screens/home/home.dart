@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:online_shop_ai/common/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'package:online_shop_ai/features/shop/screens/all_products/all_products.dart';
 import 'package:online_shop_ai/features/shop/screens/home/widgets/home_appbar.dart';
 import '../../../../common/widgets/custom_shapes/containers/searh_container.dart';
 import '../../../../common/widgets/layouts/grid_layout.dart';
@@ -58,7 +60,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwSections),
 
                   /// Heading
-                  TSectionHeading(title: 'Popular Categories', onPressed:(){}),
+                  TSectionHeading(title: 'Popular Categories', onPressed:() => Get.to(() => const AllProducts())),
                   const SizedBox(height: TSizes.spaceBtwItems),
 
                   /// Popular Products
