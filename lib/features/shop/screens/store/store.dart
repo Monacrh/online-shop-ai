@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:online_shop_ai/common/widgets/appbar/appbar.dart';
 import 'package:online_shop_ai/common/widgets/appbar/tabbar.dart';
 import 'package:online_shop_ai/common/widgets/custom_shapes/containers/searh_container.dart';
 import 'package:online_shop_ai/common/widgets/layouts/grid_layout.dart';
 import 'package:online_shop_ai/common/widgets/products.cart/cart_menu_icon.dart';
 import 'package:online_shop_ai/common/widgets/texts/section_heading.dart';
+import 'package:online_shop_ai/features/shop/screens/brand/all_brands.dart';
 import 'package:online_shop_ai/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:online_shop_ai/utils/constants/colors.dart';
 import 'package:online_shop_ai/utils/helpers/helper_functions.dart';
@@ -48,7 +50,7 @@ class StoreScreen extends StatelessWidget {
                     const SizedBox(height: TSizes.spaceBtwItems),
       
                     /// Featured Brands
-                    TSectionHeading(title: 'Featured Brands', onPressed:(){}),
+                    TSectionHeading(title: 'Featured Brands', onPressed:() => Get.to (() => const AllBrandsScreen())),
                     const SizedBox(height: TSizes.spaceBtwItems/1.5),
       
                     GridLayout(itemCount: 4, mainAxisExtent: 80 ,itemBuilder: (_, index){
