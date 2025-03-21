@@ -1,6 +1,6 @@
 # online_shop_ai
 
-A new Flutter project.
+An Online Shop Flutter project.
 
 ## Getting Started
 
