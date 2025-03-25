@@ -1,6 +1,6 @@
 # online_shop_ai
 
-An Online Shop with AI VTON Flutter project.
+An Online Shop with AI VTON Flutter (3.24.5 Version) project.
 
 ## Getting Started
 
