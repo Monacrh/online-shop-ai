@@ -5,7 +5,7 @@ An Online Shop with AI VTON Flutter (3.24.5 Version) project.
 ## Getting Started
 
 This project is an online shop with VTON AI.
-with Firebase
+with Firebase as the backend.
 
 A few resources to get you started if this is your first Flutter project:
 
